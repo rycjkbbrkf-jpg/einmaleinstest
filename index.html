@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatheTest</title>
+
+    style.css
+
+    https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.jsscript>
+
+    generator.jsscript>
+    app.jsscript>
+</head>
+<body>
+
+    <header>
+        <h1>MatheTest</h1>
+    </header>
+
+    <main>
+
+        <section id="teacherPage">
+
+            <h2>Test erstellen</h2>
+
+            <div class="card">
+
+                <h3>Reihen auswählen</h3>
+
+                <div id="rowSelection">
+
+                    <label><input type="checkbox" value="1">1er</label>
+                    <label><input type="checkbox" value="2">2er</label>
+                    <label><input type="checkbox" value="3">3er</label>
+                    <label><input type="checkbox" value="4">4er</label>
+                    <label><input type="checkbox" value="5">5er</label>
+                    <label><input type="checkbox" value="6">6er</label>
+                    <label><input type="checkbox" value="7">7er</label>
+                    <label><input type="checkbox" value="8">8er</label>
+                    <label><input type="checkbox" value="9">9er</label>
+                    <label><input type="checkbox" value="10">10er</label>
+                    <label><input type="checkbox" value="11">11er</label>
+                    <label><input type="checkbox" value="12">12er</label>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Aufgabenarten</h3>
+
+                <label>
+                    <input id="multiplication" type="checkbox" checked>
+                    Multiplikation
+                </label>
+
+                <br>
+
+                <label>
+                    <input id="division" type="checkbox">
+                    Division ohne Rest
+                </label>
+
+                <br>
+
+                <label>
+                    <input id="divisionRest" type="checkbox">
+                    Division mit Rest
+                </label>
+
+                <br>
+
+                <label>
+                    <input id="extended1000" type="checkbox">
+                    Erweiterte Aufgaben bis 1000
+                </label>
+
+            </div>
+
+            <div class="card">
+
+                <label>
+
+                    Aufgabenzahl
+
+                    <input
+                        id="taskCount"
+                        type="number"
+                        value="100"
+                        min="10"
+                        max="200">
+
+                </label>
+
+                <br><br>
+
+                <label>
+
+                    Zeit (Minuten)
+
+                    <input
+                        id="testTime"
+                        type="number"
+                        value="10"
+                        min="1"
+                        max="60">
+
+                </label>
+
+            </div>
+
+            <button id="createTestBtn">
+                Test erstellen
+            </button>
+
+            <div id="testOutput"></div>
+
+            <div id="qrCode"></div>
+
+        </section>
+
+        <section id="studentPage" class="hidden">
+
+            <h2 id="studentTitle">
+                MatheTest
+            </h2>
+
+            <div class="card">
+
+                <input
+                    id="studentName"
+                    type="text"
+                    placeholder="Name eingeben">
+
+                <button id="startBtn">
+                    Start
+                </button>
+
+            </div>
+
+            <div id="examArea" class="hidden">
+
+                <div id="progress"></div>
+
+                <div id="timer"></div>
+
+                <div id="taskDisplay"></div>
+
+                <input
+                    id="answerField"
+                    readonly>
+
+                <div id="answerFieldRestContainer" class="hidden">
+
+                    <label>
+                        Rest
+                    </label>
+
+                    <input
+                        id="restField"
+                        readonly>
+
+                </div>
+
+                <div id="keypad">
+
+                    <button data-number="1">1</button>
+                    <button data-number="2">2</button>
+                    <button data-number="3">3</button>
+
+                    <button data-number="4">4</button>
+                    <button data-number="5">5</button>
+                    <button data-number="6">6</button>
+
+                    <button data-number="7">7</button>
+                    <button data-number="8">8</button>
+                    <button data-number="9">9</button>
+
+                    <button data-number="0">0</button>
+
+                </div>
+
+                <div class="controls">
+
+                    <button id="deleteBtn">
+                        Löschen
+                    </button>
+
+                    <button id="confirmBtn">
+                        ✓ Bestätigen
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="resultPage" class="hidden">
+
+            <h2>Auswertung</h2>
+
+            <div id="resultContent"></div>
+
+            <button onclick="window.print()">
+                Drucken / PDF speichern
+            </button>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
